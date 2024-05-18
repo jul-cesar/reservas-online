@@ -3,7 +3,7 @@ import DropdownOptions from "./DropdownOptions";
 
 const Card = ({ cancha }: { cancha: Cancha }) => {
   return (
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full max-w-sm bg-[#191919] border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="flex justify-end px-4 pt-4">
         <button
           id="dropdownButton"
@@ -13,27 +13,26 @@ const Card = ({ cancha }: { cancha: Cancha }) => {
         >
           <span className="sr-only">Open dropdown</span>
           <DropdownOptions cancha={cancha}>
-          <svg
-           
-            className="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 16 3"
-          >
-            <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-          </svg>
+            <svg
+              className="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 16 3"
+            >
+              <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
+            </svg>
           </DropdownOptions>
         </button>
-        </div>
-      
+      </div>
+
       <div className="flex flex-col items-center pb-10">
         <img
           className="w-24 h-24 mb-3 rounded-full shadow-lg"
           src={cancha.ImgURL}
           alt="Bonnie image"
         />
-        <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+        <h5 className="mb-1 text-xl font-medium text-white">
           {cancha.Nombre}
         </h5>
         <span className="text-sm text-gray-500 dark:text-gray-400">

@@ -21,7 +21,6 @@ export function DeleteDialog({
   children: ReactNode;
   cancha?: Cancha;
 }) {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const queryClient = useQueryClient();
   const { mutateAsync } = useMutation({
@@ -33,10 +32,7 @@ export function DeleteDialog({
     },
   });
   return (
-    <AlertDialog
-      open={isDialogOpen}
-      onOpenChange={(open) => setIsDialogOpen(open)}
-    >
+    <AlertDialog >
       <AlertDialogTrigger>{children}</AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>

@@ -17,15 +17,15 @@ const Inicio = () => {
   });
   if (isLoading) {
     return (
-      <div className="h-screen flex justify-center items-center mb-10 ">
-        <Loader2 className="animate-spin size-14" />
+      <div className="flex gap-4 min-h-dvh flex-wrap items-center justify-center m-4">
+        <Loader2 className="animate-spin  size-14" />
       </div>
     );
   }
   return (
     <div className="flex gap-4  flex-wrap sm:justify-center  justify-center m-4">
       {data?.map((cancha) => (
-        <Card cancha={cancha} />
+        <Card key={cancha.IDCancha} cancha={cancha} />
       ))}
     </div>
   );
