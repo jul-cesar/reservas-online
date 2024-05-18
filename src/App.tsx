@@ -1,26 +1,35 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import "./App.css";
 import SectionTop from "./components/SectionTop";
 import Inicio from "./Pages/Inicio";
 import Reservas from "./Pages/Reservas";
-import Facturas from "./Pages/Facturas";
 import Suplementos from "./Pages/Suplementos";
+import Login from "./Pages/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
+import NoAdmin from "./Pages/NoAdmin";
 
 function App() {
+  const location = useLocation();
+  const hideSectionTopPaths = ["/", "/404", "/noadmin"];
+
   return (
-    <div className="min-h-max mx-auto ">
-      <SectionTop />
+    <div className="h-max mx-auto">
+      {!hideSectionTopPaths.includes(location.pathname) && <SectionTop />}
       <Routes>
-        <Route path="/canchas" element={<Inicio />} />
-      </Routes>
-      <Routes>
-        <Route path="/reservas" element={<Reservas />} />
-      </Routes>
-      <Routes>
-        <Route path="/facturas" element={<Facturas />} />
-      </Routes>
-      <Routes>
-        <Route path="/suplementos" element={<Suplementos />} />
+        <Route path="/" element={<Login />} />
+
+        <Route element={<ProtectedRoute />}>
+          <Route path="/canchas" element={<Inicio />} />
+          <Route path="/reservas" element={<Reservas />} />
+          <Route path="/suplementos" element={<Suplementos />} />{" "}
+          <Route path="/suplementos" element={<Suplementos />} />
+        </Route>
+        <Route path="/noadmin" element={<NoAdmin />} />
+        <Route
+          path="/404"
+          element={<p className="text-center text-lg">Ruta no existente 404</p>}
+        />
+        <Route path="*" element={<Navigate to="/404" />} />
       </Routes>
     </div>
   );

@@ -3,8 +3,12 @@ import { getCanchas } from "../api/Canchas/canchas";
 import { Cancha } from "../Models/Cancha";
 import Card from "../components/Card";
 import { Loader2 } from "lucide-react";
+import { useContext } from "react";
+import { AuthContext } from "../context/auth";
 
 const Inicio = () => {
+  const { currentUser } = useContext(AuthContext);
+  console.log(currentUser);
   const { data, isLoading } = useQuery<Cancha[]>({
     queryKey: ["canchas"],
     queryFn: async (): Promise<Cancha[]> => {
@@ -23,7 +27,7 @@ const Inicio = () => {
     );
   }
   return (
-    <div className="flex gap-4  flex-wrap sm:justify-center  justify-center m-4">
+    <div className=" flex gap-4  flex-wrap sm:justify-center  justify-center m-4">
       {data?.map((cancha) => (
         <Card key={cancha.IDCancha} cancha={cancha} />
       ))}
