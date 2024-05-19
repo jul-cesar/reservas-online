@@ -17,7 +17,7 @@ const FacturasDialog = ({
         <DialogTitle>Factura(s) para la reserva #{facturas.map((f)=>(f.IDReserva))}</DialogTitle>
         <div>
           {facturas.map((factura) => (
-            <div className="border rounded-lg p-4 shadow-md mb-4">
+            <div key={factura.IDFactura} className="border rounded-lg p-4 shadow-md mb-4">
               <h2 className="text-xl font-semibold mb-2">
                 Factura #{factura.IDFactura}
               </h2>

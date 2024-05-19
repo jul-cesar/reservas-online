@@ -10,7 +10,7 @@ const ReservaCard = ({ reserva }: { reserva: Reserva }) => {
         <h2 className="text-xl font-semibold mb-2">
           Reserva #{reserva.IDReserva}
         </h2>
-        <DropdownOptionsReserva>
+        <DropdownOptionsReserva reserva={reserva}>
           <svg
             className="w-5 h-5"
             aria-hidden="true"
@@ -51,7 +51,7 @@ const ReservaCard = ({ reserva }: { reserva: Reserva }) => {
       </p>
       <strong>Suministros adicionales:</strong>
       {reserva.suministrosadicionales.map((s) => (
-        <p>{s.TipoSuministro}</p>
+        <p key={s.IDSuministro}>{s.TipoSuministro}</p>
       ))}
       <FacturasDialog facturas={reserva.facturas}>
         <Button className="m-4">Ver factura</Button>

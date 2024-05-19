@@ -3,7 +3,7 @@ import DropdownOptions from "./DropdownOptions";
 
 const Card = ({ cancha }: { cancha: Cancha }) => {
   return (
-    <div className="w-full max-w-sm bg-[#191919] border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full max-w-sm  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="flex justify-end px-4 pt-4">
         <button
           id="dropdownButton"

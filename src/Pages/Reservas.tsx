@@ -1,15 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 
 import { Loader2 } from "lucide-react";
-import { useContext } from "react";
-import { AuthContext } from "../context/auth";
+
 import { Reserva } from "../Models/Reserva";
 import { getReservas } from "../api/Reservas/reservas";
 import ReservaCard from "../components/ReservaCard";
 
 const Reservas = () => {
-  const { currentUser } = useContext(AuthContext);
-  console.log(currentUser);
   const { data, isLoading } = useQuery<Reserva[]>({
     queryKey: ["reservas"],
     queryFn: async (): Promise<Reserva[]> => {
@@ -29,7 +26,7 @@ const Reservas = () => {
   }
   return (
     <div className=" flex gap-4  flex-wrap sm:justify-center  justify-center m-4">
-      {data?.map((reserva) => (
+      {Array.isArray(data) && data?.map((reserva) => (
         <ReservaCard key={reserva.IDReserva} reserva={reserva} />
       ))}
     </div>
