@@ -26,33 +26,91 @@ const Card = ({ cancha }: { cancha: Cancha }) => {
         </button>
       </div>
 
-      <div className="flex flex-col items-center pb-10">
+      <div className="flex flex-col items-center pb-4">
         <img
           className="w-24 h-24 mb-3 rounded-full shadow-lg"
           src={cancha.ImgURL}
           alt="Bonnie image"
         />
-        <h5 className="mb-1 text-xl font-medium text-white">
-          {cancha.Nombre}
-        </h5>
-        <span className="text-sm text-gray-500 dark:text-gray-400">
-          {cancha.Descripcion}
-        </span>
-        <span className="text-sm text-gray-500 dark:text-gray-400">
-          {cancha.Disponibilidad}
-        </span>
-        <span className="text-sm text-gray-500 dark:text-gray-400">
-          {cancha.Direccion}
-        </span>
-        <span className="text-sm text-gray-500 dark:text-gray-400">
-          {cancha.HoraApertura}
-        </span>
-        <span className="text-sm text-gray-500 dark:text-gray-400">
-          {cancha.HoraCierre}
-        </span>
-        <span className="text-sm text-gray-500 dark:text-gray-400">
-          {cancha.Precio}
-        </span>
+        <h5 className="mb-1 text-xl font-medium ">{cancha.Nombre}</h5>
+        <div className="flex  items-center gap-1">
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {cancha.Descripcion}
+          </span>
+        </div>
+        <div className="flex  items-center gap-1">
+          <span className="text-sm text-gray-500 dark:text-gray-400 font-bold">
+            Disponibilidad:
+          </span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {cancha.Disponibilidad}
+          </span>
+        </div>
+
+        <div className="flex  items-center gap-1">
+          <span className="text-sm text-gray-500 dark:text-gray-400 font-bold">
+            Contacto:
+          </span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {cancha.Contacto}
+          </span>
+        </div>
+
+        <div className="flex  items-center gap-1">
+          <span className="text-sm text-gray-500 dark:text-gray-400 font-bold">
+            Dimensiones:
+          </span>
+
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {cancha.Dimensiones}
+          </span>
+        </div>
+
+        <div className="flex  items-center gap-1">
+          <span className="text-sm text-gray-500 dark:text-gray-400 font-bold">
+            Capacidad maxima:
+          </span>
+
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {cancha.CapacidadMaxima}
+          </span>
+        </div>
+
+        <div className="flex  items-center gap-1">
+          <span className="text-sm text-gray-500 dark:text-gray-400 font-bold">
+            Direccion:
+          </span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {cancha.Direccion}
+          </span>
+        </div>
+
+        <div className="flex  items-center gap-1">
+          <span className="text-sm text-gray-500 dark:text-gray-400 font-bold">
+            Hora apertura:
+          </span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {cancha.HoraApertura}
+          </span>
+        </div>
+
+        <div className="flex  items-center gap-1">
+          <span className="text-sm text-gray-500 dark:text-gray-400 font-bold">
+            Hora cierre:
+          </span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {cancha.HoraCierre}
+          </span>
+        </div>
+
+        <div className="flex  items-center gap-1">
+          <span className="text-sm text-gray-500 dark:text-gray-400 font-bold">
+            Precio:
+          </span>
+          <span className="text-sm text-gray-500 dark:text-gray-400">
+            {cancha.Precio}
+          </span>
+        </div>
       </div>
     </div>
   );
