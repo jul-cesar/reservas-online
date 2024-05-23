@@ -4,7 +4,7 @@ import { User } from "../../Models/User";
 
 export const getReservas = async (): Promise<Reserva[] | undefined> => {
   try {
-    const response = await fetch("https://reserva-canchas.vercel.app/reserva");
+    const response = await fetch("https://reserva-canchas-three.vercel.app/reserva");
     const data: Reserva[] = await response.json();
     return data;
   } catch (error) {
@@ -33,7 +33,7 @@ interface ReservaX {
 export const editarReserva = async (id: number, info: Partial<ReservaX>) => {
   try {
     const response = await fetch(
-      `https://reserva-canchas.vercel.app/reserva/${id}`,
+      `https://reserva-canchas-three.vercel.app/reserva/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -52,7 +52,7 @@ export const getUnaReserva = async (
 ): Promise<Reserva | undefined> => {
   try {
     const response = await fetch(
-      `https://reserva-canchas.vercel.app/reserva/una/${id}`
+      `https://reserva-canchas-three.vercel.app/reserva/una/${id}`
     );
     const data: Reserva = await response.json();
     return data;

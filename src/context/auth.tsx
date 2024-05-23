@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const login = async (credentials: Auth): Promise<User | undefined> => {
     try {
       const response = await fetch(
-        "https://reserva-canchas.vercel.app/auth/login",
+        "https://reserva-canchas-three.vercel.app/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

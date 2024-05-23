@@ -3,10 +3,10 @@ import "./App.css";
 import SectionTop from "./components/SectionTop";
 import Inicio from "./Pages/Inicio";
 import Reservas from "./Pages/Reservas";
-import Suplementos from "./Pages/Suplementos";
 import Login from "./Pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NoAdmin from "./Pages/NoAdmin";
+import Suministros from "./Pages/Suministros";
 
 function App() {
   const location = useLocation();
@@ -21,8 +21,7 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/canchas" element={<Inicio />} />
           <Route path="/reservas" element={<Reservas />} />
-          <Route path="/suplementos" element={<Suplementos />} />{" "}
-          <Route path="/suplementos" element={<Suplementos />} />
+          <Route path="/suministros" element={<Suministros />} />{" "}
         </Route>
         <Route path="/noadmin" element={<NoAdmin />} />
         <Route

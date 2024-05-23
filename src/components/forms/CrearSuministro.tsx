@@ -123,7 +123,7 @@ const CrearSuministro = ({ children }: { children?: ReactNode }) => {
               )}
             />
 
-            <Button type="submit">Editar</Button>
+            <Button type="submit">Crear</Button>
           </form>
         </Form>
       </DialogContent>

@@ -3,6 +3,7 @@ import CrearCancha from "./forms/CrearCancha";
 import { ReactNode } from "react";
 import { Button } from "./ui/button";
 import CrearSuministro from "./forms/CrearSuministro";
+import Suministros from "../Pages/Suministros";
 const SectionTop = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -16,8 +17,8 @@ const SectionTop = () => {
       name: "Reservas",
     },
     {
-      href: "/suplementos",
-      name: "Suplementos",
+      href: "/suministros",
+      name: "Suministros",
     },
     // {
     //   href: "javascript:void(0)",
@@ -31,7 +32,7 @@ const SectionTop = () => {
 
   const forms: Forms = {
     canchas: CrearCancha,
-    suplementos: CrearSuministro,
+    suministros: CrearSuministro,
   };
   const currentPath = location.pathname.split("/").pop() ?? "";
 

@@ -3,7 +3,7 @@ import { Suministro } from "../Models/Suministros";
 import { getSuministros } from "../api/suministros/suministros";
 import { Loader2 } from "lucide-react";
 
-const Suplementos = () => {
+const Suministros = () => {
   const { data, isLoading } = useQuery<Suministro[]>({
     queryKey: ["suministros"],
     queryFn: async (): Promise<Suministro[]> => {
@@ -45,4 +45,4 @@ const Suplementos = () => {
     </div>
   );
 };
-export default Suplementos;
+export default Suministros;

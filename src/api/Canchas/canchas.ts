@@ -2,7 +2,7 @@ import { Cancha } from "../../Models/Cancha";
 
 export const getCanchas = async () => {
   try {
-    const response = await fetch("https://reserva-canchas.vercel.app/cancha");
+    const response = await fetch("https://reserva-canchas-three.vercel.app/cancha");
     const data = await response.json();
     return data;
   } catch (error) {
@@ -22,7 +22,7 @@ export const crearCancha = async (info: Cancha) => {
 export const eliminarCancha = async (id: number) => {
   try {
     const response = await fetch(
-      `https://reserva-canchas.vercel.app/cancha/${id}`,
+      `https://reserva-canchas-three.vercel.app/cancha/${id}`,
       { method: "delete" }
     );
     const data = await response.json();
@@ -35,7 +35,7 @@ export const eliminarCancha = async (id: number) => {
 export const editarCancha = async (id: number, info: Partial<Cancha>) => {
   try {
     const response = await fetch(
-      `https://reserva-canchas.vercel.app/cancha/${id}`,
+      `https://reserva-canchas-three.vercel.app/cancha/${id}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -51,7 +51,7 @@ export const editarCancha = async (id: number, info: Partial<Cancha>) => {
 
 export const getUnaCanchas = async (id: number) => {
   try {
-    const response = await fetch(`https://reserva-canchas.vercel.app/cancha/${id}`);
+    const response = await fetch(`https://reserva-canchas-three.vercel.app/cancha/${id}`);
     const data = await response.json();
     return data;
   } catch (error) {
